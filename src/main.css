@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+    font-size: clamp(18px, calc(1.125rem + ((1vw - 8px) * 0.8681)), 28px);
+
+    scroll-behavior: smooth;
+
+    @apply bg-[#1e2532] text-white;
+
+    --headerHeight: 2.5rem;
+    --headerColor: #131821;
+    --sectionPadding: 2rem;
+}
+
+.container {
+    @apply max-lg:min-w-[95%] lg:min-w-[75%] mx-auto
+}
+
+.flex-center {
+    @apply justify-center items-center;
+}
