@@ -4,8 +4,8 @@
 			<a class="flex items-center space-x-2 text-xs font-light leading-tight" href="#top">
 				<IconCode class="w-8 h-8"/>
 				<div>
-					<div>Front-end</div>
-					<div>developer</div>
+					<div>Frontend</div>
+					<div>Developer</div>
 				</div>
 			</a>
 
