@@ -1,5 +1,5 @@
 <template>
-	<header class="header header--transparent">
+	<header class="header header--transparent z-50">
 		<div class="container flex justify-between items-center h-full px-4">
 			<a class="flex items-center space-x-2 text-xs font-light leading-tight" href="#top">
 				<IconCode class="w-8 h-8"/>
