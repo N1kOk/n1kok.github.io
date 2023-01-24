@@ -56,20 +56,20 @@ const isMenuOpened = ref(false)
 
 const navLinks = [
 	{
-		text: 'Обо мне',
-		href: '#about',
-	},
-	{
 		text: 'Навыки',
 		href: '#skills',
 	},
 	{
-		text: 'Работы',
-		href: '#works',
+		text: 'Проекты',
+		href: '#projects',
+	},
+	{
+		text: 'Контакты',
+		href: '#about',
 	},
 ]
 
-window.addEventListener('scroll', event => {
+window.addEventListener('scroll', () => {
 	const $header = document.querySelector('.header')!
 	if (window.scrollY > 0)
 		$header.classList.remove('header--transparent')
