@@ -4,11 +4,12 @@
 	<main>
 		<section class="flex items-center min-h-screen h-max bg-[radial-gradient(at_50%_0,#224356,#222b3a)]">
 			<div class="container flex max-lg:flex-col gap-4 min-h-[20rem]">
-				<div class="flex flex-center w-full text-5xl">
-					<div>
-						<div class="font-bold">Frontend</div>
-						<div>Developer</div>
-					</div>
+				<div class="flex flex-center w-full">
+					<h1 class="text-5xl">
+						<span class="font-bold">Frontend</span>
+						<br>
+						<span>Developer</span>
+					</h1>
 				</div>
 				<div class="flex flex-center w-full">
 					<div class="relative w-[15rem] h-[15rem] scale-150 select-none">
@@ -16,7 +17,8 @@
 							<img src="/assets/images/vue.svg" alt="logo">
 						</IconInteractive>
 
-						<IconInteractive class="left-[30%] top-1/2" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">
+						<IconInteractive class="left-[30%] top-1/2"
+						                 href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">
 							<img src="/assets/images/js.svg" alt="logo">
 						</IconInteractive>
 
@@ -72,15 +74,50 @@
 			</div>
 		</section>
 
-		<section class="min-h-screen">
-			<div class="container flex justify-between">
-
+		<section>
+			<div class="container flex flex-row-reverse justify-between h-full">
+				<div class="flex flex-center w-full">
+					<h2 class="text-4xl font-bold">Мои навыки</h2>
+				</div>
+				<div class="flex flex-center w-full">
+					<div class="flex flex-col space-y-4 text-sm">
+						<div class="flex gap-2">
+							<div class="bg-white/10 rounded-full px-3">JavaScript</div>
+							<div class="bg-white/10 rounded-full px-3">TypeScript</div>
+						</div>
+						<div class="flex space-x-2">
+							<div class="bg-white/10 rounded-full px-3">Vue 3 (Composition API)</div>
+							<div class="bg-white/10 rounded-full px-3">Vuex</div>
+							<div class="bg-white/10 rounded-full px-3">Nuxt 3</div>
+						</div>
+						<div class="flex space-x-2">
+							<div class="bg-white/10 rounded-full px-3">HTML</div>
+							<div class="bg-white/10 rounded-full px-3">CSS</div>
+							<div class="bg-white/10 rounded-full px-3">Sass</div>
+							<div class="bg-white/10 rounded-full px-3">TailwindCSS</div>
+							<div class="bg-white/10 rounded-full px-3">PostCSS</div>
+						</div>
+						<div class="flex space-x-2">
+							<div class="bg-white/10 rounded-full px-3">Webpack</div>
+							<div class="bg-white/10 rounded-full px-3">Vite</div>
+							<div class="bg-white/10 rounded-full px-3">Gulp</div>
+							<div class="bg-white/10 rounded-full px-3">Docker</div>
+						</div>
+						<div class="flex space-x-2">
+							<div class="bg-white/10 rounded-full px-3">Jest</div>
+							<div class="bg-white/10 rounded-full px-3">Storybook</div>
+						</div>
+						<div class="flex space-x-2">
+							<div class="bg-white/10 rounded-full px-3">Git</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</section>
 
-		<section class="min-h-screen bg-[#223343]">
-			<div class="container flex justify-between">
-
+		<section class="bg-[#223343]">
+			<div class="container flex">
+				<h2 class="mx-auto text-4xl font-bold">Мои проекты</h2>
 			</div>
 		</section>
 	</main>
@@ -94,15 +131,16 @@ import IconInteractive from '@/components/IconInteractive.vue'</script>
 main {
 	section {
 		padding-top: calc(var(--sectionPadding));
+		padding-bottom: calc(var(--sectionPadding));
 	}
 
 	section:nth-child(1) {
-		@apply pt-0;
+		//@apply pt-0;
 		//padding-top: calc(var(--headerHeight) + var(--sectionPadding));
 	}
 
-	section:last-child {
-		padding-bottom: calc(var(--sectionPadding));
-	}
+	//section:last-child {
+	//	padding-bottom: calc(var(--sectionPadding));
+	//}
 }
 </style>
