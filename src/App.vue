@@ -75,7 +75,7 @@
 		</section>
 
 		<section>
-			<div class="container flex flex-row-reverse justify-between h-full">
+			<div class="container flex flex-row-reverse justify-between gap-4">
 				<div class="flex flex-center w-full">
 					<h2 class="text-4xl font-bold">Мои навыки</h2>
 				</div>
@@ -120,16 +120,22 @@
 				<h2 class="mx-auto text-4xl font-bold">Мои проекты</h2>
 				<div class="grid grid-cols-[repeat(auto-fit,minmax(14rem,1fr))] gap-4">
 					<div class="group relative overflow-hidden rounded-3xl">
-						<img
-							class="absolute h-[5rem] object-cover transition-[filter] group-hover:blur-md"
-							src="/assets/images/ts.svg"
-							alt="dz-helper logo"
-						>
+						<div class="absolute w-full h-[5rem] transition-[filter] group-hover:blur-md">
+							<div class="flex flex-center h-full space-x-1 bg-[#149dcc]">
+								<img class="w-10 h-10" src="/assets/images/dz-helper.svg" alt="dz-helper logo">
+								<div class="text-3xl font-bold">DZ-Helper</div>
+							</div>
+						</div>
 						<div class="relative w-[calc(100%_+_1px)] h-full p-4 space-y-4 z-10 text-sm bg-black/25
 						transition-transform translate-y-[5rem] group-hover:translate-y-0 will-change-transform">
-							<h3 class="text-2xl font-bold">DZ-Helper</h3>
 							<div>
-								Автоматизированное выполнение школьных домашних заданий с помощью расширений для браузеров
+								Автоматизированное выполнение школьных домашних заданий с помощью расширений для
+								браузеров
+							</div>
+							<div>
+								<a class="link" href="https://dz-helper.ru" target="_blank">Перейти на сайт</a>
+								<br>
+								<a class="link" href="#" target="_blank">Перейти в GitHub</a>
 							</div>
 							<div class="space-y-1">
 								<div class="font-bold">Стек технологий</div>
@@ -162,6 +168,12 @@
 				</div>
 			</div>
 		</section>
+
+		<section>
+			<div class="container">
+				<!--... + GitHub + CodeWars-->
+			</div>
+		</section>
 	</main>
 </template>
 
@@ -173,17 +185,15 @@ import AppChip from '@/components/AppChip.vue'</script>
 <style scoped lang="scss">
 main {
 	section {
-		padding-top: calc(var(--sectionPadding));
-		padding-bottom: calc(var(--sectionPadding));
-	}
+		padding: calc(var(--sectionPadding)) 0;
 
-	section:nth-child(1) {
-		//@apply pt-0;
-		//padding-top: calc(var(--headerHeight) + var(--sectionPadding));
-	}
+		&:nth-child(1) {
+			padding: calc(var(--headerHeight) + var(--sectionPadding)) 0;
+		}
 
-	//section:last-child {
-	//	padding-bottom: calc(var(--sectionPadding));
-	//}
+		&:last-child {
+			padding-bottom: calc(var(--sectionPadding) * 2);
+		}
+	}
 }
 </style>
