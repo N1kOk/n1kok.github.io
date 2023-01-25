@@ -80,35 +80,35 @@
 					<h2 class="text-4xl font-bold">Мои навыки</h2>
 				</div>
 				<div class="flex flex-center w-full">
-					<div class="flex flex-col space-y-4 text-sm">
+					<div class="flex flex-col space-y-4">
 						<div class="flex gap-2">
-							<div class="bg-white/10 rounded-full px-3">JavaScript</div>
-							<div class="bg-white/10 rounded-full px-3">TypeScript</div>
+							<AppChip>JavaScript</AppChip>
+							<AppChip>TypeScript</AppChip>
 						</div>
 						<div class="flex space-x-2">
-							<div class="bg-white/10 rounded-full px-3">Vue 3 (Composition API)</div>
-							<div class="bg-white/10 rounded-full px-3">Vuex</div>
-							<div class="bg-white/10 rounded-full px-3">Nuxt 3</div>
+							<AppChip>Vue 3 (Composition API)</AppChip>
+							<AppChip>Vuex</AppChip>
+							<AppChip>Nuxt 3</AppChip>
 						</div>
 						<div class="flex space-x-2">
-							<div class="bg-white/10 rounded-full px-3">HTML</div>
-							<div class="bg-white/10 rounded-full px-3">CSS</div>
-							<div class="bg-white/10 rounded-full px-3">Sass</div>
-							<div class="bg-white/10 rounded-full px-3">TailwindCSS</div>
-							<div class="bg-white/10 rounded-full px-3">PostCSS</div>
+							<AppChip>HTML</AppChip>
+							<AppChip>CSS</AppChip>
+							<AppChip>Sass</AppChip>
+							<AppChip>TailwindCSS</AppChip>
+							<AppChip>PostCSS</AppChip>
 						</div>
 						<div class="flex space-x-2">
-							<div class="bg-white/10 rounded-full px-3">Webpack</div>
-							<div class="bg-white/10 rounded-full px-3">Vite</div>
-							<div class="bg-white/10 rounded-full px-3">Gulp</div>
-							<div class="bg-white/10 rounded-full px-3">Docker</div>
+							<AppChip>Webpack</AppChip>
+							<AppChip>Vite</AppChip>
+							<AppChip>Gulp</AppChip>
+							<AppChip>Docker</AppChip>
 						</div>
 						<div class="flex space-x-2">
-							<div class="bg-white/10 rounded-full px-3">Jest</div>
-							<div class="bg-white/10 rounded-full px-3">Storybook</div>
+							<AppChip>Jest</AppChip>
+							<AppChip>Storybook</AppChip>
 						</div>
 						<div class="flex space-x-2">
-							<div class="bg-white/10 rounded-full px-3">Git</div>
+							<AppChip>Git</AppChip>
 						</div>
 					</div>
 				</div>
@@ -119,22 +119,27 @@
 			<div class="container flex flex-col space-y-8">
 				<h2 class="mx-auto text-4xl font-bold">Мои проекты</h2>
 				<div class="grid grid-cols-[repeat(auto-fit,minmax(14rem,1fr))] gap-4">
-					<div class="group relative overflow-hidden bg-white/10 rounded-3xl">
+					<div class="group relative overflow-hidden rounded-3xl">
 						<img
 							class="absolute h-[5rem] object-cover transition-[filter] group-hover:blur-md"
 							src="/assets/images/ts.svg"
 							alt="dz-helper logo"
 						>
-						<div class="relative h-full p-4 space-y-1 z-10  bg-black/10
+						<div class="relative w-[calc(100%_+_1px)] h-full p-4 space-y-4 z-10 text-sm bg-black/25
 						transition-transform translate-y-[5rem] group-hover:translate-y-0 will-change-transform">
 							<h3 class="text-2xl font-bold">DZ-Helper</h3>
-							<div class="text-sm">Автоматизированное выполнение школьных домашних заданий с помощью расширений</div>
 							<div>
-								<div>Стек технологий:</div>
+								Автоматизированное выполнение школьных домашних заданий с помощью расширений для браузеров
+							</div>
+							<div class="space-y-1">
+								<div class="font-bold">Стек технологий</div>
+								<div class="flex gap-1 text-xs">
+									<AppChip size="sm">TypeScript</AppChip>
+								</div>
 							</div>
 						</div>
-						<div class="absolute left-0 bottom-0 h-12 w-full z-20 bg-gradient-to-t from-black
-						 transition-opacity group-hover:opacity-0">
+						<div class="absolute left-0 bottom-0 h-20 w-full z-20 bg-gradient-to-t from-black
+						 transition-opacity group-hover:opacity-0 pointer-events-none">
 							<div class="hidden lg:absolute bottom-1 w-full text-center text-xs">
 								Нажмите, чтобы посмотреть
 							</div>
@@ -162,7 +167,8 @@
 
 <script setup lang="ts">
 import TheHeader from '@/components/TheHeader.vue'
-import IconInteractive from '@/components/IconInteractive.vue'</script>
+import IconInteractive from '@/components/IconInteractive.vue'
+import AppChip from '@/components/AppChip.vue'</script>
 
 <style scoped lang="scss">
 main {
