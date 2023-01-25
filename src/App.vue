@@ -77,7 +77,7 @@
 		<section>
 			<div class="container flex flex-row-reverse justify-between gap-4">
 				<div class="flex flex-center w-full">
-					<h2 class="text-4xl font-bold">Мои навыки</h2>
+					<h2 class="text-right text-4xl font-bold">Мои навыки</h2>
 				</div>
 				<div class="flex flex-center w-full">
 					<div class="flex flex-col space-y-4">
@@ -118,30 +118,38 @@
 		<section class="bg-[#223343]">
 			<div class="container flex flex-col space-y-8">
 				<h2 class="mx-auto text-4xl font-bold">Мои проекты</h2>
+
 				<div class="grid grid-cols-[repeat(auto-fit,minmax(14rem,1fr))] gap-4">
-					<div class="group relative overflow-hidden rounded-3xl">
-						<div class="absolute w-full h-[5rem] transition-[filter] group-hover:blur-md">
-							<div class="flex flex-center h-full space-x-1 bg-[#149dcc]">
-								<img class="w-10 h-10" src="/assets/images/dz-helper.svg" alt="dz-helper logo">
-								<div class="text-3xl font-bold">DZ-Helper</div>
+
+					<div v-for="item in projects" class="group relative overflow-hidden rounded-3xl">
+						<div class="absolute w-full h-[5rem] transition-[filter] group-hover:blur-xl">
+							<div
+								class="flex flex-center h-full space-x-1"
+								:style="`background: ${item.color}`"
+							>
+								<img v-if="item.logoUrl" class="w-10 h-10" :src="item.logoUrl" alt="logo">
+								<div class="text-3xl font-bold" v-html="item.logoHTML"/>
 							</div>
 						</div>
-						<div class="relative w-[calc(100%_+_1px)] h-full p-4 space-y-4 z-10 text-sm bg-black/25
+						<div class="relative flex flex-col w-[calc(100%_+_1px)] h-full p-4 space-y-4 z-10 text-sm bg-black/50
 						transition-transform translate-y-[5rem] group-hover:translate-y-0 will-change-transform">
-							<div>
-								Автоматизированное выполнение школьных домашних заданий с помощью расширений для
-								браузеров
-							</div>
-							<div>
-								<a class="link" href="https://dz-helper.ru" target="_blank">Перейти на сайт</a>
-								<br>
-								<a class="link" href="#" target="_blank">Перейти в GitHub</a>
-							</div>
+							<div>{{ item.description }}</div>
 							<div class="space-y-1">
 								<div class="font-bold">Стек технологий</div>
-								<div class="flex gap-1 text-xs">
-									<AppChip size="sm">TypeScript</AppChip>
+								<div class="flex flex-wrap gap-1 text-xs">
+									<AppChip v-for="name in item.technologies" size="sm">{{ name }}</AppChip>
 								</div>
+							</div>
+							<div class="flex-1"/>
+							<div class="flex gap-x-4 gap-y-2">
+								<a class="link flex items-center space-x-1" :href="item.url" target="_blank">
+									<img class="w-4 h-4" src="/assets/images/ts.svg" alt="site">
+									<span>Сайт</span>
+								</a>
+								<a class="link flex items-center space-x-1" :href="item.githubUrl" target="_blank">
+									<img class="w-4 h-4" src="/assets/images/ts.svg" alt="github">
+									<span>GitHub</span>
+								</a>
 							</div>
 						</div>
 						<div class="absolute left-0 bottom-0 h-20 w-full z-20 bg-gradient-to-t from-black
@@ -151,20 +159,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="overflow-hidden bg-white/10 rounded-3xl">
-						<img class="h-[100px] object-cover" src="/assets/images/ts.svg" alt="dz-helper logo">
-						<div class="p-4 space-y-1">
-							<h3 class="text-2xl font-bold">SmartVK</h3>
-							<div>Тестовое описание проекта</div>
-						</div>
-					</div>
-					<div class="overflow-hidden bg-white/10 rounded-3xl">
-						<img class="h-[100px] object-cover" src="/assets/images/ts.svg" alt="dz-helper logo">
-						<div class="p-4 space-y-1">
-							<h3 class="text-2xl font-bold">AVTools</h3>
-							<div>Тестовое описание проекта</div>
-						</div>
-					</div>
+
 				</div>
 			</div>
 		</section>
@@ -180,7 +175,49 @@
 <script setup lang="ts">
 import TheHeader from '@/components/TheHeader.vue'
 import IconInteractive from '@/components/IconInteractive.vue'
-import AppChip from '@/components/AppChip.vue'</script>
+import AppChip from '@/components/AppChip.vue'
+
+interface Tech {
+	logoUrl?: string
+	technologies: string[]
+}
+
+interface Project extends Tech, Record<
+	'color' |
+	'logoHTML' |
+	'description' |
+	'url' |
+	'githubUrl',
+	string> {}
+
+const projects: Project[] = [
+	{
+		color: '#149dcc',
+		logoUrl: '/assets/images/dz-helper.svg',
+		logoHTML: 'DZ-Helper',
+		description: 'Автоматизированное выполнение школьных домашних заданий с помощью расширений для браузеров',
+		url: 'https://dz-helper.ru',
+		githubUrl: '#',
+		technologies: ['Vue 3 (Composition API)', 'TypeScript'],
+	},
+	{
+		color: 'black',
+		logoHTML: '<i>Smart<sup style="color: dodgerblue">VK</sup></i>',
+		description: 'Сервис для проведения автоматических конкурсов в группах ВКонтакте (Аналог ActiveBot.ru)',
+		url: 'https://dz-helper.ru',
+		githubUrl: '#',
+		technologies: ['Nuxt 3 (Composition API)', 'TypeScript'],
+	},
+	{
+		color: 'black',
+		logoHTML: '<span style="color: #00a8ff">AV</span>Tools',
+		description: 'Верстка главной страницы сайта',
+		url: 'https://dz-helper.ru',
+		githubUrl: '#',
+		technologies: ['TypeScript'],
+	},
+]
+</script>
 
 <style scoped lang="scss">
 main {

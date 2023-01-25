@@ -24,7 +24,7 @@ const classes = {
 
 <style scoped lang="scss">
 .chip {
-	@apply bg-white/10 rounded-full;
+	@apply whitespace-nowrap bg-white/10 rounded-full;
 
 	&--size-md {
 		@apply px-3 text-sm;
