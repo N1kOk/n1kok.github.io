@@ -116,8 +116,45 @@
 		</section>
 
 		<section class="bg-[#223343]">
-			<div class="container flex">
+			<div class="container flex flex-col space-y-8">
 				<h2 class="mx-auto text-4xl font-bold">Мои проекты</h2>
+				<div class="grid grid-cols-[repeat(auto-fit,minmax(14rem,1fr))] gap-4">
+					<div class="group relative overflow-hidden bg-white/10 rounded-3xl">
+						<img
+							class="absolute h-[5rem] object-cover transition-[filter] group-hover:blur-md"
+							src="/assets/images/ts.svg"
+							alt="dz-helper logo"
+						>
+						<div class="relative h-full p-4 space-y-1 z-10  bg-black/10
+						transition-transform translate-y-[5rem] group-hover:translate-y-0 will-change-transform">
+							<h3 class="text-2xl font-bold">DZ-Helper</h3>
+							<div class="text-sm">Автоматизированное выполнение школьных домашних заданий с помощью расширений</div>
+							<div>
+								<div>Стек технологий:</div>
+							</div>
+						</div>
+						<div class="absolute left-0 bottom-0 h-12 w-full z-20 bg-gradient-to-t from-black
+						 transition-opacity group-hover:opacity-0">
+							<div class="hidden lg:absolute bottom-1 w-full text-center text-xs">
+								Нажмите, чтобы посмотреть
+							</div>
+						</div>
+					</div>
+					<div class="overflow-hidden bg-white/10 rounded-3xl">
+						<img class="h-[100px] object-cover" src="/assets/images/ts.svg" alt="dz-helper logo">
+						<div class="p-4 space-y-1">
+							<h3 class="text-2xl font-bold">SmartVK</h3>
+							<div>Тестовое описание проекта</div>
+						</div>
+					</div>
+					<div class="overflow-hidden bg-white/10 rounded-3xl">
+						<img class="h-[100px] object-cover" src="/assets/images/ts.svg" alt="dz-helper logo">
+						<div class="p-4 space-y-1">
+							<h3 class="text-2xl font-bold">AVTools</h3>
+							<div>Тестовое описание проекта</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</section>
 	</main>
