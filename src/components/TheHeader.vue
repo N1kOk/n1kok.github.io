@@ -14,13 +14,25 @@
 			</nav>
 
 			<div class="flex space-x-2">
-				<a class="block rounded-full transition-colors hover:bg-white/10" :href="contacts.skype">
+				<a
+					class="block rounded-full transition-colors hover:bg-white/10"
+					:href="contacts.skype"
+					target="_blank"
+				>
 					<IconSkype class="w-6 h-6 scale-75"/>
 				</a>
-				<a class="block rounded-full transition-colors hover:bg-white/10" :href="`mailto:${contacts.email}`">
+				<a
+					class="block rounded-full transition-colors hover:bg-white/10"
+					:href="`mailto:${contacts.email}`"
+					target="_blank"
+				>
 					<IconMail class="w-6 h-6 scale-75"/>
 				</a>
-				<a class="block rounded-full transition-colors hover:bg-white/10" :href="contacts.telegram">
+				<a
+					class="block rounded-full transition-colors hover:bg-white/10"
+					:href="contacts.telegram"
+					target="_blank"
+				>
 					<IconTelegram class="w-6 h-6 scale-75"/>
 				</a>
 			</div>
