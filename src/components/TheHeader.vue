@@ -9,8 +9,8 @@
 				</div>
 			</a>
 
-			<nav class="flex space-x-1 text-xs max-lg:hidden">
-				<AppButton v-for="item in navLinks" :href="item.href">{{ item.text }}</AppButton>
+			<nav class="flex space-x-12 text-xs max-lg:hidden">
+				<AppLink v-for="item in navLinks" :href="item.href">{{ item.text }}</AppLink>
 			</nav>
 
 			<div class="flex space-x-2">
@@ -45,12 +45,12 @@
 </template>
 
 <script setup lang="ts">
-import AppButton from '@/components/AppButton.vue'
 import { ref } from 'vue'
 import IconCode from '@/components/icons/IconCode.vue'
 import IconSkype from '@/components/icons/IconSkype.vue'
 import IconMail from '@/components/icons/IconMail.vue'
 import IconTelegram from '@/components/icons/IconTelegram.vue'
+import AppLink from '@/components/AppLink.vue'
 
 const isMenuOpened = ref(false)
 

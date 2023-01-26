@@ -142,14 +142,24 @@
 							</div>
 							<div class="flex-1"/>
 							<div class="flex gap-x-4 gap-y-2">
-								<a class="link flex items-center space-x-1" :href="item.url" target="_blank">
-									<img class="w-4 h-4" src="/assets/images/ts.svg" alt="site">
+								<AppLink
+									v-if="item.url"
+									class="flex items-center space-x-1"
+									:href="item.url"
+									target="_blank"
+								>
+									<img class="w-4 h-4" src="/assets/images/link.svg" alt="site">
 									<span>Сайт</span>
-								</a>
-								<a class="link flex items-center space-x-1" :href="item.githubUrl" target="_blank">
-									<img class="w-4 h-4" src="/assets/images/ts.svg" alt="github">
+								</AppLink>
+								<AppLink
+									v-if="item.githubUrl"
+									class="flex items-center space-x-1"
+									:href="item.githubUrl"
+									target="_blank"
+								>
+									<img class="w-4 h-4" src="/assets/images/github.svg" alt="github">
 									<span>GitHub</span>
-								</a>
+								</AppLink>
 							</div>
 						</div>
 						<div class="absolute left-0 bottom-0 h-20 w-full z-20 bg-gradient-to-t from-black
@@ -176,18 +186,19 @@
 import TheHeader from '@/components/TheHeader.vue'
 import IconInteractive from '@/components/IconInteractive.vue'
 import AppChip from '@/components/AppChip.vue'
+import AppLink from '@/components/AppLink.vue'
 
 interface Tech {
 	logoUrl?: string
+	url?: string
+	githubUrl?: string
 	technologies: string[]
 }
 
 interface Project extends Tech, Record<
 	'color' |
 	'logoHTML' |
-	'description' |
-	'url' |
-	'githubUrl',
+	'description',
 	string> {}
 
 const projects: Project[] = [
@@ -197,24 +208,23 @@ const projects: Project[] = [
 		logoHTML: 'DZ-Helper',
 		description: 'Автоматизированное выполнение школьных домашних заданий с помощью расширений для браузеров',
 		url: 'https://dz-helper.ru',
-		githubUrl: '#',
-		technologies: ['Vue 3 (Composition API)', 'TypeScript'],
+		githubUrl: 'https://github.com/N1kOk/DZ-Helper',
+		technologies: ['Vue 3 (Composition API)', 'Vuex', 'TypeScript', 'TailwindCSS', 'PostCSS', 'Sass', 'Vite'],
 	},
 	{
 		color: 'black',
 		logoHTML: '<i>Smart<sup style="color: dodgerblue">VK</sup></i>',
 		description: 'Сервис для проведения автоматических конкурсов в группах ВКонтакте (Аналог ActiveBot.ru)',
-		url: 'https://dz-helper.ru',
-		githubUrl: '#',
-		technologies: ['Nuxt 3 (Composition API)', 'TypeScript'],
+		url: 'https://smartvk.ru',
+		technologies: ['Nuxt 3 (Composition API)', 'TypeScript', 'TailwindCSS', 'PostCSS', 'Sass', 'Vite'],
 	},
 	{
 		color: 'black',
 		logoHTML: '<span style="color: #00a8ff">AV</span>Tools',
 		description: 'Верстка главной страницы сайта',
-		url: 'https://dz-helper.ru',
-		githubUrl: '#',
-		technologies: ['TypeScript'],
+		url: 'https://avtools.netlify.app/',
+		githubUrl: 'https://github.com/N1kOk/AVTools',
+		technologies: ['JavaScript', 'Sass', 'Webpack'],
 	},
 ]
 </script>
