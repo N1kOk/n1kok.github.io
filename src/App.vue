@@ -131,35 +131,37 @@
 								<div class="text-3xl font-bold" v-html="item.logoHTML"/>
 							</div>
 						</div>
-						<div class="relative flex flex-col w-[calc(100%_+_1px)] h-full p-4 space-y-4 z-10 text-sm bg-black/50
+						<div class="relative flex flex-col w-[calc(100%_+_1px)] h-full p-4 space-y-2 z-10 text-sm bg-black/50
 						transition-transform translate-y-[5rem] group-hover:translate-y-0 will-change-transform">
 							<div>{{ item.description }}</div>
-							<div class="space-y-1">
-								<div class="font-bold">Стек технологий</div>
-								<div class="flex flex-wrap gap-1 text-xs">
-									<AppChip v-for="name in item.technologies" size="sm">{{ name }}</AppChip>
-								</div>
-							</div>
 							<div class="flex-1"/>
-							<div class="flex gap-x-4 gap-y-2">
-								<AppLink
-									v-if="item.url"
-									class="flex items-center space-x-1"
-									:href="item.url"
-									target="_blank"
-								>
-									<img class="w-4 h-4" src="/assets/images/link.svg" alt="site">
-									<span>Сайт</span>
-								</AppLink>
-								<AppLink
-									v-if="item.githubUrl"
-									class="flex items-center space-x-1"
-									:href="item.githubUrl"
-									target="_blank"
-								>
-									<img class="w-4 h-4" src="/assets/images/github.svg" alt="github">
-									<span>GitHub</span>
-								</AppLink>
+							<div class="space-y-4">
+								<div class="space-y-1">
+									<div class="font-bold">Стек технологий</div>
+									<div class="flex flex-wrap gap-1 text-xs">
+										<AppChip v-for="name in item.technologies" size="sm">{{ name }}</AppChip>
+									</div>
+								</div>
+								<div class="flex gap-x-4 gap-y-2">
+									<AppLink
+										v-if="item.url"
+										class="flex items-center space-x-1"
+										:href="item.url"
+										target="_blank"
+									>
+										<img class="w-4 h-4" src="/assets/images/link.svg" alt="site">
+										<span>Сайт</span>
+									</AppLink>
+									<AppLink
+										v-if="item.githubUrl"
+										class="flex items-center space-x-1"
+										:href="item.githubUrl"
+										target="_blank"
+									>
+										<img class="w-4 h-4" src="/assets/images/github.svg" alt="github">
+										<span>GitHub</span>
+									</AppLink>
+								</div>
 							</div>
 						</div>
 						<div class="absolute left-0 bottom-0 h-20 w-full z-20 bg-gradient-to-t from-black
@@ -175,8 +177,51 @@
 		</section>
 
 		<section>
-			<div class="container">
-				<!--... + GitHub + CodeWars-->
+			<div class="container flex flex-col space-y-8">
+				<h2 class="mx-auto text-4xl font-bold">Мои контакты</h2>
+
+				<div class="flex flex-wrap justify-around gap-4 font-bold">
+					<AppLink
+						class="flex items-center space-x-1"
+						:href="contacts.skype"
+						target="_blank"
+					>
+						<IconSkype class="w-5 h-5"/>
+						<span>Skype</span>
+					</AppLink>
+					<AppLink
+						class="flex items-center space-x-1"
+						:href="`mailto:${contacts.email}`"
+						target="_blank"
+					>
+						<IconMail class="w-5 h-5"/>
+						<span>E-Mail</span>
+					</AppLink>
+					<AppLink
+						class="flex items-center space-x-1"
+						:href="contacts.telegram"
+						target="_blank"
+					>
+						<IconTelegram class="w-5 h-5"/>
+						<span>Telegram</span>
+					</AppLink>
+					<AppLink
+						class="flex items-center space-x-1"
+						:href="contacts.github"
+						target="_blank"
+					>
+						<img class="w-5 h-5" src="/assets/images/github.svg" alt="github logo">
+						<span>GitHub</span>
+					</AppLink>
+					<AppLink
+						class="flex items-center space-x-1"
+						:href="contacts.codewars"
+						target="_blank"
+					>
+						<img class="w-5 h-5" src="/assets/images/codewars.svg" alt="codewars logo">
+						<span>CodeWars</span>
+					</AppLink>
+				</div>
 			</div>
 		</section>
 	</main>
@@ -187,47 +232,11 @@ import TheHeader from '@/components/TheHeader.vue'
 import IconInteractive from '@/components/IconInteractive.vue'
 import AppChip from '@/components/AppChip.vue'
 import AppLink from '@/components/AppLink.vue'
-
-interface Tech {
-	logoUrl?: string
-	url?: string
-	githubUrl?: string
-	technologies: string[]
-}
-
-interface Project extends Tech, Record<
-	'color' |
-	'logoHTML' |
-	'description',
-	string> {}
-
-const projects: Project[] = [
-	{
-		color: '#149dcc',
-		logoUrl: '/assets/images/dz-helper.svg',
-		logoHTML: 'DZ-Helper',
-		description: 'Автоматизированное выполнение школьных домашних заданий с помощью расширений для браузеров',
-		url: 'https://dz-helper.ru',
-		githubUrl: 'https://github.com/N1kOk/DZ-Helper',
-		technologies: ['Vue 3 (Composition API)', 'Vuex', 'TypeScript', 'TailwindCSS', 'PostCSS', 'Sass', 'Vite'],
-	},
-	{
-		color: 'black',
-		logoHTML: '<i>Smart<sup style="color: dodgerblue">VK</sup></i>',
-		description: 'Сервис для проведения автоматических конкурсов в группах ВКонтакте (Аналог ActiveBot.ru)',
-		url: 'https://smartvk.ru',
-		technologies: ['Nuxt 3 (Composition API)', 'TypeScript', 'TailwindCSS', 'PostCSS', 'Sass', 'Vite'],
-	},
-	{
-		color: 'black',
-		logoHTML: '<span style="color: #00a8ff">AV</span>Tools',
-		description: 'Верстка главной страницы сайта',
-		url: 'https://avtools.netlify.app/',
-		githubUrl: 'https://github.com/N1kOk/AVTools',
-		technologies: ['JavaScript', 'Sass', 'Webpack'],
-	},
-]
-</script>
+import IconMail from '@/components/icons/IconMail.vue'
+import IconSkype from '@/components/icons/IconSkype.vue'
+import IconTelegram from '@/components/icons/IconTelegram.vue'
+import { contacts } from '@/config/contacts'
+import { projects } from '@/config/projects'</script>
 
 <style scoped lang="scss">
 main {

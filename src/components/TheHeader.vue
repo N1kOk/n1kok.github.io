@@ -2,7 +2,7 @@
 	<header class="header header--transparent z-50">
 		<div class="container flex justify-between items-center h-full px-4">
 			<a class="flex items-center space-x-2 text-xs font-light leading-tight" href="#top">
-				<IconCode class="w-8 h-8"/>
+				<img class="w-8 h-8" src="/assets/images/code.svg" alt="logo">
 				<div>
 					<div>Frontend</div>
 					<div>Developer</div>
@@ -14,13 +14,13 @@
 			</nav>
 
 			<div class="flex space-x-2">
-				<a class="block rounded-full transition-colors hover:bg-white/10" href="#">
+				<a class="block rounded-full transition-colors hover:bg-white/10" :href="contacts.skype">
 					<IconSkype class="w-6 h-6 scale-75"/>
 				</a>
-				<a class="block rounded-full transition-colors hover:bg-white/10" href="#">
+				<a class="block rounded-full transition-colors hover:bg-white/10" :href="`mailto:${contacts.email}`">
 					<IconMail class="w-6 h-6 scale-75"/>
 				</a>
-				<a class="block rounded-full transition-colors hover:bg-white/10" href="#">
+				<a class="block rounded-full transition-colors hover:bg-white/10" :href="contacts.telegram">
 					<IconTelegram class="w-6 h-6 scale-75"/>
 				</a>
 			</div>
@@ -46,11 +46,11 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import IconCode from '@/components/icons/IconCode.vue'
 import IconSkype from '@/components/icons/IconSkype.vue'
 import IconMail from '@/components/icons/IconMail.vue'
 import IconTelegram from '@/components/icons/IconTelegram.vue'
 import AppLink from '@/components/AppLink.vue'
+import { contacts } from '@/config/contacts'
 
 const isMenuOpened = ref(false)
 
