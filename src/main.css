@@ -16,7 +16,7 @@ html {
 }
 
 .container {
-    @apply max-lg:min-w-[95%] lg:min-w-[75%] mx-auto
+    @apply max-lg:min-w-[90%] max-lg:max-w-[90%] lg:min-w-[75%] lg:max-w-[75%] mx-auto
 }
 
 .flex-center {

@@ -2,8 +2,8 @@
 	<TheHeader/>
 
 	<main>
-		<section class="flex items-center min-h-screen h-max bg-[radial-gradient(at_50%_0,#224356,#222b3a)]">
-			<div class="container flex max-lg:flex-col gap-4 min-h-[20rem]">
+		<section class="flex flex-col items-center min-h-screen h-max bg-[radial-gradient(at_50%_0,#224356,#222b3a)]">
+			<div class="container flex flex-1 justify-around max-lg:flex-col gap-4">
 				<div class="flex flex-center w-full">
 					<h1 class="text-5xl">
 						<span class="font-bold">Frontend</span>
@@ -75,39 +75,40 @@
 		</section>
 
 		<section>
-			<div class="container flex flex-row-reverse justify-between gap-4">
-				<div class="flex flex-center w-full">
-					<h2 class="text-right text-4xl font-bold">Мои навыки</h2>
+			<div class="anchor" id="skills"/>
+			<div class="container flex flex-col lg:flex-row-reverse justify-between gap-x-4 gap-y-8">
+				<div class="flex items-center flex-auto">
+					<h2 class="mx-auto text-4xl font-bold">Мои навыки</h2>
 				</div>
-				<div class="flex flex-center w-full">
+				<div class="flex flex-center flex-auto">
 					<div class="flex flex-col space-y-4">
-						<div class="flex gap-2">
+						<div class="flex flex-wrap gap-2">
 							<AppChip>JavaScript</AppChip>
 							<AppChip>TypeScript</AppChip>
 						</div>
-						<div class="flex space-x-2">
+						<div class="flex flex-wrap gap-2">
 							<AppChip>Vue 3 (Composition API)</AppChip>
 							<AppChip>Vuex</AppChip>
 							<AppChip>Nuxt 3</AppChip>
 						</div>
-						<div class="flex space-x-2">
+						<div class="flex flex-wrap gap-2">
 							<AppChip>HTML</AppChip>
 							<AppChip>CSS</AppChip>
 							<AppChip>Sass</AppChip>
 							<AppChip>TailwindCSS</AppChip>
 							<AppChip>PostCSS</AppChip>
 						</div>
-						<div class="flex space-x-2">
+						<div class="flex flex-wrap gap-2">
 							<AppChip>Webpack</AppChip>
 							<AppChip>Vite</AppChip>
 							<AppChip>Gulp</AppChip>
 							<AppChip>Docker</AppChip>
 						</div>
-						<div class="flex space-x-2">
+						<div class="flex flex-wrap gap-2">
 							<AppChip>Jest</AppChip>
 							<AppChip>Storybook</AppChip>
 						</div>
-						<div class="flex space-x-2">
+						<div class="flex flex-wrap gap-2">
 							<AppChip>Git</AppChip>
 						</div>
 					</div>
@@ -116,6 +117,8 @@
 		</section>
 
 		<section class="bg-[#223343]">
+			<div class="anchor" id="projects"/>
+
 			<div class="container flex flex-col space-y-8">
 				<h2 class="mx-auto text-4xl font-bold">Мои проекты</h2>
 
@@ -142,7 +145,7 @@
 										<AppChip v-for="name in item.technologies" size="sm">{{ name }}</AppChip>
 									</div>
 								</div>
-								<div class="flex gap-x-4 gap-y-2">
+								<div class="flex gap-x-8 gap-y-2">
 									<AppLink
 										v-if="item.url"
 										class="flex items-center space-x-1"
@@ -166,7 +169,7 @@
 						</div>
 						<div class="absolute left-0 bottom-0 h-20 w-full z-20 bg-gradient-to-t from-black
 						 transition-opacity group-hover:opacity-0 pointer-events-none">
-							<div class="hidden lg:absolute bottom-1 w-full text-center text-xs">
+							<div class="absolute lg:hidden bottom-3 w-full text-center text-sm">
 								Нажмите, чтобы посмотреть
 							</div>
 						</div>
@@ -177,6 +180,8 @@
 		</section>
 
 		<section>
+			<div class="anchor" id="contacts"/>
+
 			<div class="container flex flex-col space-y-8">
 				<h2 class="mx-auto text-4xl font-bold">Мои контакты</h2>
 
@@ -240,6 +245,8 @@ import { projects } from '@/config/projects'</script>
 
 <style scoped lang="scss">
 main {
+	@apply overflow-hidden;
+
 	section {
 		padding: calc(var(--sectionPadding)) 0;
 
@@ -251,5 +258,9 @@ main {
 			padding-bottom: calc(var(--sectionPadding) * 2);
 		}
 	}
+}
+
+.anchor {
+	@apply relative -top-[calc(var(--headerHeight)_+_var(--sectionPadding))]
 }
 </style>

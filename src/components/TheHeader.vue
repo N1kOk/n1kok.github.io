@@ -1,6 +1,6 @@
 <template>
 	<header class="header header--transparent z-50">
-		<div class="container flex justify-between items-center h-full px-4">
+		<div class="container flex justify-between items-center h-full px-4 max-lg:!px-0">
 			<a class="flex items-center space-x-2 text-xs font-light leading-tight" href="#top">
 				<img class="w-8 h-8" src="/assets/images/code.svg" alt="logo">
 				<div>
@@ -77,7 +77,7 @@ const navLinks = [
 	},
 	{
 		text: 'Контакты',
-		href: '#about',
+		href: '#contacts',
 	},
 ]
 

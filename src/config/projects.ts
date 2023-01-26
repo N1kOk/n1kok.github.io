@@ -7,6 +7,8 @@ interface Tech {
 
 interface Project extends Tech, Record<'color' | 'logoHTML' | 'description', string> {}
 
+const dropShadow = 'filter: drop-shadow(0px 0px 1px currentColor) drop-shadow(0px 0px 5px currentColor);'
+
 export const projects: Project[] = [
 	{
 		color: '#149dcc',
@@ -19,7 +21,7 @@ export const projects: Project[] = [
 	},
 	{
 		color: 'black',
-		logoHTML: '<i>Smart<sup style="color: dodgerblue">VK</sup></i>',
+		logoHTML: `<i><span style="${dropShadow}">Smart</span><sup style="${dropShadow} color: dodgerblue">VK</sup></i>`,
 		description: 'Сервис для проведения автоматических конкурсов в группах ВКонтакте (Аналог ActiveBot.ru)',
 		url: 'https://smartvk.ru',
 		technologies: ['Nuxt 3 (Composition API)', 'TypeScript', 'TailwindCSS', 'PostCSS', 'Sass', 'Vite'],
