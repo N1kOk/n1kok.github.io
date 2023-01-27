@@ -21,7 +21,7 @@ export const projects: Project[] = [
 	},
 	{
 		color: 'black',
-		logoHTML: `<i><span style="${dropShadow}">Smart</span><sup style="${dropShadow} color: dodgerblue">VK</sup></i>`,
+		logoHTML: `<i><span style="${dropShadow}">Smart</span><sup style="${dropShadow} color: aqua;">VK</sup></i>`,
 		description: 'Сервис для проведения автоматических конкурсов в группах ВКонтакте (Аналог ActiveBot.ru)',
 		url: 'https://smartvk.ru',
 		technologies: ['Nuxt 3 (Composition API)', 'TypeScript', 'TailwindCSS', 'PostCSS', 'Sass', 'Vite'],
@@ -35,7 +35,7 @@ export const projects: Project[] = [
 		technologies: ['JavaScript', 'Sass', 'Webpack'],
 	},
 	{
-		color: 'black',
+		color: 'rgba(0, 0, 0, 0.8)',
 		logoHTML: `
 <div class="flex items-center space-x-2 text-xs font-light leading-tight scale-150">
 	<img class="w-8 h-8" src="/assets/images/code.svg" alt="logo">
