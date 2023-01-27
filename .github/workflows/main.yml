@@ -14,5 +14,6 @@ jobs:
       with:
         node-version: 16
     - run: npm ci
+    - run: rm ./.gitignore
     - name: Deploying the static website to gh-pages
       run: npm run build-and-deploy
