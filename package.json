@@ -4,10 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "vite",
-    "build": "run-p type-check build-only",
-    "preview": "vite preview",
-    "build-only": "vite build",
-    "type-check": "vue-tsc --noEmit"
+    "build": "vite build",
+    "deploy": "git push origin `git subtree split --prefix dist master`:gh-pages --force",
+    "build-and-deploy": "run-s build deploy",
+    "preview": "vite preview"
   },
   "dependencies": {
     "vue": "^3.2.45"
