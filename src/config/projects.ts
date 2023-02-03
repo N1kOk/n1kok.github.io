@@ -48,4 +48,13 @@ export const projects: Project[] = [
 		githubUrl: 'https://github.com/N1kOk/n1kok.github.io/tree/master',
 		technologies: ['Vue 3 (Composition API)', 'TypeScript', 'TailwindCSS', 'PostCSS', 'Sass', 'Vite'],
 	},
+	{
+		color: 'black',
+		logoHTML: `
+<div style="position: absolute; left: 0; top: 0; width: 100%; height: 100%; background: url('/assets/images/cosmofly.jpg') center; background-size: cover;">
+</div>`,
+		description: 'Игра под Android',
+		url: 'https://play.google.com/store/apps/details?id=org.godotengine.cosmofly&hl=ru&gl=US',
+		technologies: ['Godot 3', 'GDScript'],
+	},
 ]
