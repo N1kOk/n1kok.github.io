@@ -58,8 +58,8 @@
 							<img src="/assets/images/docker.svg" alt="logo">
 						</IconInteractive>
 
-						<IconInteractive class="left-[22%] top-[78%]" href="https://jestjs.io/">
-							<img src="/assets/images/jest.svg" alt="logo">
+						<IconInteractive class="left-[22%] top-[78%]" href="https://vitest.dev/">
+							<img src="/assets/images/vitest.svg" alt="logo">
 						</IconInteractive>
 
 						<IconInteractive class="left-[78%] top-[78%]" href="https://storybook.js.org/">
@@ -105,7 +105,7 @@
 							<AppChip>Docker</AppChip>
 						</div>
 						<div class="flex flex-wrap gap-2">
-							<AppChip>Jest</AppChip>
+							<AppChip>Vitest</AppChip>
 							<AppChip>Storybook</AppChip>
 						</div>
 						<div class="flex flex-wrap gap-2">
