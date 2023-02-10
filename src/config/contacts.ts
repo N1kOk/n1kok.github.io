@@ -1,5 +1,5 @@
 export const contacts = {
-	skype: '#',
+	skype: 'https://join.skype.com/invite/JAnYjMB1xzae',
 	email: 'n1k_ok@bk.ru',
 	telegram: 'https://t.me/n1k_ok',
 	github: 'https://github.com/N1kOk',
