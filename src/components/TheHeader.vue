@@ -16,10 +16,10 @@
 			<div class="flex space-x-2">
 				<a
 					class="block rounded-full transition-colors hover:bg-white/10"
-					:href="contacts.skype"
+					:href="contacts.telegram"
 					target="_blank"
 				>
-					<IconSkype class="w-6 h-6 scale-75"/>
+					<IconTelegram class="w-6 h-6 scale-75"/>
 				</a>
 				<a
 					class="block rounded-full transition-colors hover:bg-white/10"
@@ -30,10 +30,10 @@
 				</a>
 				<a
 					class="block rounded-full transition-colors hover:bg-white/10"
-					:href="contacts.telegram"
+					:href="contacts.skype"
 					target="_blank"
 				>
-					<IconTelegram class="w-6 h-6 scale-75"/>
+					<IconSkype class="w-6 h-6 scale-75"/>
 				</a>
 			</div>
 

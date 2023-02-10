@@ -188,11 +188,11 @@
 				<div class="flex flex-wrap justify-around gap-4 font-bold">
 					<AppLink
 						class="flex items-center space-x-1"
-						:href="contacts.skype"
+						:href="contacts.telegram"
 						target="_blank"
 					>
-						<IconSkype class="w-5 h-5"/>
-						<span>Skype</span>
+						<IconTelegram class="w-5 h-5"/>
+						<span>Telegram</span>
 					</AppLink>
 					<AppLink
 						class="flex items-center space-x-1"
@@ -204,11 +204,11 @@
 					</AppLink>
 					<AppLink
 						class="flex items-center space-x-1"
-						:href="contacts.telegram"
+						:href="contacts.skype"
 						target="_blank"
 					>
-						<IconTelegram class="w-5 h-5"/>
-						<span>Telegram</span>
+						<IconSkype class="w-5 h-5"/>
+						<span>Skype</span>
 					</AppLink>
 					<AppLink
 						class="flex items-center space-x-1"
