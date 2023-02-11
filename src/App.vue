@@ -87,9 +87,10 @@
 							<AppChip>TypeScript</AppChip>
 						</div>
 						<div class="flex flex-wrap gap-2">
-							<AppChip>Vue 3 (Composition API)</AppChip>
+							<AppChip>Vue</AppChip>
+							<AppChip>Vue-Router</AppChip>
 							<AppChip>Vuex</AppChip>
-							<AppChip>Nuxt 3</AppChip>
+							<AppChip>Nuxt</AppChip>
 						</div>
 						<div class="flex flex-wrap gap-2">
 							<AppChip>HTML</AppChip>
