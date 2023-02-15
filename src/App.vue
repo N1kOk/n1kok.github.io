@@ -104,9 +104,11 @@
 							<AppChip>Vite</AppChip>
 							<AppChip>Gulp</AppChip>
 							<AppChip>Docker</AppChip>
+							<AppChip>Docker-Compose</AppChip>
 						</div>
 						<div class="flex flex-wrap gap-2">
 							<AppChip>Vitest</AppChip>
+							<AppChip>Jest</AppChip>
 							<AppChip>Storybook</AppChip>
 						</div>
 						<div class="flex flex-wrap gap-2">
